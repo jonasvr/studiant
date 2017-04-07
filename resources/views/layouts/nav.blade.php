@@ -62,6 +62,7 @@
                                     {{ csrf_field() }}
                                 </form>
                             </li>
+                            <li><a href="{{route('admin')}}">Admin page</a></li>
                         </ul>
                     </li>
                 @endif

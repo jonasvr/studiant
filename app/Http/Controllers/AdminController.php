@@ -47,6 +47,9 @@ class AdminController extends Controller
         $subject = $this->subjects->find($id);
         $subject->delete();
 
+        $this->articles->archive($id);
+
+
         return back()->with(['success'=>'succesvol verwijderd']);
     }
 
@@ -55,5 +58,23 @@ class AdminController extends Controller
         $this->subjects->create($request->all());
 
         return back()->with(['success'=>'succesvol toegevoegd']);
+    }
+
+    public function ArticleOveriew()
+    {
+        $data = [
+            'articles' => $this->articles->where('archived','=',0)->paginate(15),
+            'title' => 'Latest articles',
+        ];
+
+        return view('admin.articlesOverview',$data);
+    }
+
+    public function ArticleDel($id)
+    {
+        $article = $this->articles->find($id);
+        $article->delete();
+
+        return back()->with(['success'=>'succesvol verwijderd']);
     }
 }

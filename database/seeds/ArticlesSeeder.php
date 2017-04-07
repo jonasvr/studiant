@@ -21,6 +21,7 @@ class ArticlesSeeder extends Seeder
                 Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque mollis eleifend erat ac rhoncus. Nulla ac leo nisi. Duis sit amet odio eget ex ullamcorper ornare. Nulla ut dignissim massa. Sed maximus placerat sollicitudin. Aenean condimentum imperdiet nunc quis imperdiet. Nam in accumsan dui.',
                 'subject_id' => random_int(0,9),
                 'writer' => 'Jonas Van Reeth',
+                'created_at' => date("m.d.y"),
             ]);
         }
     }

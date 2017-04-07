@@ -31,6 +31,9 @@ Route::group(['prefix' => 'articles'],function(){
 Route::group(['prefix' => 'admin'],function(){
     Route::get('/', ['as' => 'admin','uses' => 'AdminController@index']);
     Route::get('/subjects', ['as' => 'subjects-overview','uses' => 'AdminController@SubjectsOverview']);
-    Route::get('/delete/{id}', ['as' => 'subjects-delete','uses' => 'AdminController@SubjectDel']);
+    Route::get('/subject/delete/{id}', ['as' => 'subjects-delete','uses' => 'AdminController@SubjectDel']);
     Route::post('/add',['as' => 'subject-add','uses' => 'AdminController@add']);
+    Route::get('/articles', ['as' => 'article-overview','uses' => 'AdminController@ArticleOveriew']);
+    Route::get('article/delete/{id}', ['as' => 'article-delete','uses' => 'AdminController@ArticleDel']);
+
 });
