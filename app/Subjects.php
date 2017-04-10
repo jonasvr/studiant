@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Subjects extends Model
 {
+
 //    use SoftDeletes;
     public $table = "subjects";
 
@@ -17,7 +18,6 @@ class Subjects extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
-
     /**
      * The attributes that are mass assignable.
      *
