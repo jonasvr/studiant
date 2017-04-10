@@ -76,7 +76,7 @@ class ArticleController extends Controller
     public function overview()
     {
         $data = [
-            'articles' => $this->articles->paginate(15),
+            'articles' => $this->articles->where('archived','=',0)->paginate(15),
             'title' => 'Latest articles',
         ];
 

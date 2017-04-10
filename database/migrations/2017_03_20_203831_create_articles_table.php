@@ -19,6 +19,8 @@ class CreateArticlesTable extends Migration
             $table->longText('article');
             $table->string('writer');
             $table->integer('subject_id');
+            $table->boolean('archived')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

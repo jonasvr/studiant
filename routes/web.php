@@ -27,3 +27,13 @@ Route::group(['prefix' => 'articles'],function(){
     Route::get('overview/{id}', ['as' => 'overview-subject-article','uses' => 'ArticleController@subject']);
     Route::get('{id}', ['as' => 'article','uses' => 'ArticleController@getArticle']);
 });
+
+Route::group(['prefix' => 'admin'],function(){
+    Route::get('/', ['as' => 'admin','uses' => 'AdminController@index']);
+    Route::get('/subjects', ['as' => 'subjects-overview','uses' => 'AdminController@SubjectsOverview']);
+    Route::get('/subject/delete/{id}', ['as' => 'subjects-delete','uses' => 'AdminController@SubjectDel']);
+    Route::post('/add',['as' => 'subject-add','uses' => 'AdminController@add']);
+    Route::get('/articles', ['as' => 'article-overview','uses' => 'AdminController@ArticleOveriew']);
+    Route::get('article/delete/{id}', ['as' => 'article-delete','uses' => 'AdminController@ArticleDel']);
+
+});
