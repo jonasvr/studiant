@@ -51,9 +51,9 @@ class ImageController extends Controller
 //        dd($data);
         $img = $data['img'];
         $img_path = rand(1000,9999). "-" . $img->getClientOriginalName();
-        $data['img'] = 'img/' .$img_path;
-        $img->move('img/',$img_path);
-        $image = $this->images->create(['path'=>'img/'.$img_path]);
+        $data['img'] = 'img/articles/' .$img_path;
+        $img->move('img/articles/',$img_path);
+        $image = $this->images->create(['path'=>'img/articles/'.$img_path]);
 
         $article->images()->save($image);
 
