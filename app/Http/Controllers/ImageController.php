@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Articles;
+use App\Http\Requests\AddImageRequest;
+use App\Http\Requests\DeleteImageRequest;
 use Illuminate\Http\Request;
 use App\Images;
 use Illuminate\Support\Facades\Input;
@@ -43,7 +45,7 @@ class ImageController extends Controller
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function add(Request $request)
+    public function add(AddImageRequest $request)
     {
         $article = $this->articles->find($request->id);
 
@@ -64,7 +66,7 @@ class ImageController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function crop(Request $request)
+    public function crop(AddImageRequest $request)
     {
         $quality = 90;
 
@@ -81,7 +83,7 @@ class ImageController extends Controller
         return redirect(route('article',['id' => $request->id]));
     }
 
-    public function delete(Request $request)
+    public function delete(DeleteImageRequest $request)
     {
         $ids = $request->all()['id'];
 
