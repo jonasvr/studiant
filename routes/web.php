@@ -37,3 +37,10 @@ Route::group(['prefix' => 'admin'],function(){
     Route::get('article/delete/{id}', ['as' => 'article-delete','uses' => 'AdminController@ArticleDel']);
 
 });
+
+Route::group(['prefix' => 'images'],function(){
+    Route::get('/upload/{id}', ['as' => 'upload-image','uses' => 'ImageController@upload']);
+    Route::post('/add', ['as' => 'add-image','uses' => 'ImageController@add']);
+    Route::post('/crop', ['as' => 'crop-image','uses' => 'ImageController@crop']);
+    Route::post('/delete', ['as' => 'delete-images','uses' => 'ImageController@delete']);
+});

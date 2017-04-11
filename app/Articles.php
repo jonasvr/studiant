@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-
 class Articles extends Model
 {
     use SoftDeletes;
@@ -31,5 +30,11 @@ class Articles extends Model
     {
         $query->where('subject_id','=',$id)
                 ->update(['archived' => 1]);
+    }
+
+    public function images()
+    {
+        return $this->belongsToMany('App\Images')
+            ->withTimestamps();
     }
 }

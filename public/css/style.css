@@ -1,3 +1,19 @@
 label{
     text-transform: capitalize;
 }
+
+.max-height-400{
+    max-height:400px;
+}
+
+.max-height-200{
+    max-height: 200px;
+}
+
+.carousel-control .fa-arrow-left,
+.carousel-control .fa-arrow-right{
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+}

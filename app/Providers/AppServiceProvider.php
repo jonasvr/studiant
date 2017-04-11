@@ -20,8 +20,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-//        $subjects = Subjects::all();
-//        View::share('subjects',$subjects);
+        $subjects = Subjects::all();
+        View::share('subjects',$subjects);
     }
 
     /**

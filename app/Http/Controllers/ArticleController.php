@@ -60,7 +60,6 @@ class ArticleController extends Controller
     public function add(AddArticleRequest $request)
     {
         $data = $request->all();
-
         $article = $this->articles->create($data);
         return redirect()->route('article', ['id' => $article->id]);
     }
@@ -95,8 +94,11 @@ class ArticleController extends Controller
 
     public function getArticle($id)
     {
+        $article = $this->articles->find($id);
+        $images = $article->images;
         $data = [
-            'article' => $this->articles->find($id),
+            'article' => $article,
+            'images' => $images,
         ];
 
         return view('articles.article',$data);
