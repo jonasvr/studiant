@@ -27,7 +27,7 @@
                 <!-- Authentication Links -->
 
                     <li><a href="{{ route('login') }}">Home</a></li>
-                    <li><a href="{{ route('login') }}">Wie is wie</a></li>
+                    <li><a href="{{ route('whoiswho') }}">Wie is wie</a></li>
                     <li><a href="{{ route('login') }}">Wat doen we</a></li>
                     <li><a href="{{ route('login') }}">Kalender</a></li>
                     <li class="dropdown">

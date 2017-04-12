@@ -44,3 +44,7 @@ Route::group(['prefix' => 'images'],function(){
     Route::post('/crop', ['as' => 'crop-image','uses' => 'ImageController@crop']);
     Route::post('/delete', ['as' => 'delete-images','uses' => 'ImageController@delete']);
 });
+
+Route::group(['prefix' => 'who'],function(){
+    Route::get('', ['as' => 'whoiswho','uses' => 'PersonalController@index']);
+});
